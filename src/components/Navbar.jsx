@@ -26,12 +26,12 @@ function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/" className="text-gray-800 hover:text-gray-600 font-bold">
+                        <Link to="/about-CDT" className="text-gray-800 hover:text-gray-600 font-bold">
                             CDTs
                         </Link>
                     </li>
                     <li>
-                        <Link to="/" className="text-gray-800 hover:text-gray-600 font-bold">
+                        <Link to="/about-fondo-pension-obligatoria" className="text-gray-800 hover:text-gray-600 font-bold">
                             Mi cuenta Colpensiones
                         </Link>
                     </li>
