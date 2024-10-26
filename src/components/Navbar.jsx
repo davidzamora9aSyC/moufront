@@ -16,7 +16,7 @@ function Navbar() {
                 </Link>
                 <ul className="flex ml-10 space-x-6">
                     <li>
-                        <Link to="/" className="text-gray-800 hover:text-gray-600 font-bold">
+                        <Link to="/about-fondo-pension" className="text-gray-800 hover:text-gray-600 font-bold">
                             Fondos de pensión
                         </Link>
                     </li>
