@@ -6,10 +6,11 @@ import trescol2 from '../assets/images/trescol2.jpg';
 import trescol3 from '../assets/images/trescol3.jpg';
 import sfcSandbox from '../assets/images/sfcSandbox.jpg';
 import Footer from '../components/Footer';
+import fondoInversion from '../assets/images/fondosDeInversion.jpg';
+import DejanosCorreo from '../components/DejanosCorreo';
 function Home() {
     return (
         <div>
-            <Navbar />
             <div className="flex flex-col md:flex-row w-full h-[80vh]">
                 <div className="md:w-1/2 h-full">
                     <img
@@ -122,28 +123,8 @@ function Home() {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center my-28">
-                <hr className="w-[70vw] my-8 border-black" />
-            </div>
-
-            <div className="flex flex-col items-center my-28">
-                <h3 className="text-5xl font-semibold mb-20">Déjanos tu correo</h3>
-                <div className="flex items-center space-x-20">
-                    <input
-                        type="email"
-                        placeholder="Tu correo electrónico"
-                        className="border rounded-full py-3 px-5 border-gray-300 w-[40vw]"
-                    />
-                    <Button
-                        onClick={() => console.log('Correo enviado')}
-                        text="Enviar"
-                        paddingX="px-10"
-                        paddingY="py-3"
-                        color="bg-[#C512C9]"
-                    />
-                </div>
-            </div>
-            <Footer />
+           <DejanosCorreo />
+           
         </div>
     );
 }
