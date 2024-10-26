@@ -3,7 +3,7 @@ import fondoInversion from '../assets/images/fondosDeInversion.jpg';
 import Button from '../components/Button';
 import DejanosCorreo from '../components/DejanosCorreo';
 
-const ArticuloFondoDeInversion = () => {
+const ArticuloFondoDePension = () => {
     return (
         <div className="flex flex-col items-center p-4">
             <img src={fondoInversion} alt="Fondos de Inversión" className="mt-4 mb-20 mx-auto" />
@@ -43,4 +43,4 @@ const ArticuloFondoDeInversion = () => {
     );
 }
 
-export default ArticuloFondoDeInversion;
+export default ArticuloFondoDePension;

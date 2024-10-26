@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import ArticuloFondoDeInversion from './pages/ArticuloFondoDeInversion';
+import ArticuloFondoDePension from './pages/ArticuloFondoDePension';
 import Footer from './components/Footer';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about-fondo-inversion" element={<ArticuloFondoDeInversion />} />
+        <Route path="/about-fondo-pension" element={<ArticuloFondoDePension />} />
       </Routes>
       <Footer />
     </Router>
