@@ -1,5 +1,5 @@
-// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Auth0Provider } from "@auth0/auth0-react";
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import ArticuloFondoDePension from './pages/ArticuloFondoDePension';
@@ -7,20 +7,48 @@ import Footer from './components/Footer';
 import ArticuloFondoDeInversion from './pages/ArticuloFondoDeInversion';
 import ArticuloCDT from './pages/ArticuloCDT';
 import ArticuloFondoPensionObligatoria from './pages/ArticuloFondoDePensionObligatoria';
+import LoggedHome from './pages/LoggedHome';
+import ProtectedRoute from './components/ProtectedRoute';
+import { useAuth0 } from "@auth0/auth0-react";
+
+const domain = "mou-management.us.auth0.com";
+const clientId = "Mxqzv2au4wBRkmvPMUrKCpTiRoBWtm9B";
 
 function App() {
+  const { isAuthenticated, isLoading } = useAuth0();
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-fondo-pension" element={<ArticuloFondoDePension />} />
-        <Route path="/about-fondo-inversion" element={<ArticuloFondoDeInversion />} />
-        <Route path="/about-CDT" element={<ArticuloCDT />} />
-        <Route path="/about-fondo-pension-obligatoria" element={<ArticuloFondoPensionObligatoria />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <Auth0Provider
+      domain={domain}
+      clientId={clientId}
+      authorizationParams={{
+        redirect_uri: window.location.origin + "/logged-home"
+      }}
+      cacheLocation="localstorage"
+    >
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about-fondo-pension" element={<ArticuloFondoDePension />} />
+              <Route path="/about-fondo-inversion" element={<ArticuloFondoDeInversion />} />
+              <Route path="/about-CDT" element={<ArticuloCDT />} />
+              <Route path="/about-fondo-pension-obligatoria" element={<ArticuloFondoPensionObligatoria />} />
+              <Route
+                path="/logged-home"
+                element={
+                  <ProtectedRoute>
+                    <LoggedHome />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </Auth0Provider>
   );
 }
 
