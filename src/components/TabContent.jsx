@@ -7,7 +7,7 @@ import pensionesHome from '../assets/images/pensionesHome.jpg';
 const TabContent = ({ activeTab }) => {
     const containerStyles = "rounded-3xl border border-black pt-6 mb-4 min-h-[60vh]";
   const contentLeftColumn = "text-center md:text-left md:w-1/2 space-y-6"; 
-  const imageLeftColumn = "hidden md:flex md:w-1/2 justify-start ml-10";
+  const imageLeftColumn = "hidden md:flex md:w-1/2 justify-start ml-28";
   const imageRightColumn = "hidden md:flex md:w-1/2 justify-end mr-10";
   const image2RightColumn = "hidden md:flex md:w-1/2 justify-end mr-0 rounded-xl";
 
