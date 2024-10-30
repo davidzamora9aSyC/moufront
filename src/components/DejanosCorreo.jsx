@@ -21,7 +21,7 @@ const DejanosCorreo = () => {
             text="Enviar"
             paddingX="px-10"
             paddingY="py-3"
-            color="bg-[#C512C9]"
+            color="bg-[#002bc8]"
           />
         </div>
       </div>

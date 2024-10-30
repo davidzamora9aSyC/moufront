@@ -20,9 +20,9 @@ function Home() {
                     />
                 </div>
                 <div className="md:w-1/2 h-full flex items-center justify-center bg-white p-8">
-                    <h1 className="text-5xl md:text-7xl font-bold text-center text-black m-5">
+                    <h1 className="text-5xl md:text-7xl font-bold text-center text-black m-10">
                         Construye tu futuro financiero con <br />
-                        <span className="text-[#FF00DD]">MOU Management</span>
+                        <span className="text-[#002bc8] ">MOU Management</span>
                     </h1>
                 </div>
             </div>
