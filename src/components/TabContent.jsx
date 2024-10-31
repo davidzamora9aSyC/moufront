@@ -17,7 +17,7 @@ const TabContent = ({ activeTab }) => {
         <div className={contentLeftColumn}>
           <h2 className="text-4xl font-extrabold mt-40 mb-20 ml-20 mr-10">AÚN NO HAS ADQUIRIDO NINGÚN CDT</h2>
           <div className='ml-20'>
-            <Button text="VER PORTAFOLIO DE CDTs" color="bg-[#C512C9]" paddingX="px-20" paddingY="py-2" textSize="text-2xl" />
+            <Button text="VER PORTAFOLIO DE CDTs" color= "bg-[#c954a5]" paddingX="px-20" paddingY="py-2" textSize="text-2xl" />
           </div>
         </div>
         <div className={imageRightColumn}>
@@ -37,7 +37,7 @@ const TabContent = ({ activeTab }) => {
           <h2 className="text-4xl font-extrabold mt-40 mb-20 ml-20 mr-10">ABRE TU CUENTA DE INVERSIÓN HOY</h2>
           <p className="ml-20 mb-6">Accede a fondos de inversión nacionales e internacionales</p>
           <div className='ml-20'>
-            <Button text="VER FONDOS DE INVERSIÓN" color="bg-[#C512C9]" paddingX="px-20" paddingY="py-2" textSize="text-2xl" />
+            <Button text="VER FONDOS DE INVERSIÓN" color= "bg-[#c954a5]" paddingX="px-20" paddingY="py-2" textSize="text-2xl" />
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ const TabContent = ({ activeTab }) => {
           <h2 className="text-4xl font-extrabold mt-40 mb-20 ml-20 mr-10">CREA UN FUTURO CON NOSOTROS</h2>
           <p className="ml-20 mb-6">Abre una cuenta de pensión hoy y ahorra para la vejez</p>
           <div className='ml-20'>
-            <Button text="VER FONDOS DE PENSIONES" color="bg-[#C512C9]" paddingX="px-20" paddingY="py-2" textSize="text-2xl" />
+            <Button text="VER FONDOS DE PENSIONES" color= "bg-[#c954a5]" paddingX="px-20" paddingY="py-2" textSize="text-2xl" />
           </div>
         </div>
         <div className={image2RightColumn}>

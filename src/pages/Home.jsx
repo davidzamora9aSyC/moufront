@@ -8,6 +8,7 @@ import sfcSandbox from '../assets/images/sfcSandbox.jpg';
 import Footer from '../components/Footer';
 import fondoInversion from '../assets/images/fondosDeInversion.jpg';
 import DejanosCorreo from '../components/DejanosCorreo';
+import mouLogo from '../assets/images/mouLogo3.jpg';
 function Home() {
     return (
         <div>
@@ -19,10 +20,12 @@ function Home() {
                         className="w-full h-full object-cover"
                     />
                 </div>
+
+
                 <div className="md:w-1/2 h-full flex items-center justify-center bg-white p-8">
                     <h1 className="text-5xl md:text-7xl font-bold text-center text-black m-10">
                         Construye tu futuro financiero con <br />
-                        <span className="text-[#002bc8] ">MOU Management</span>
+                        <img src={mouLogo} alt="MOU Management Logo" className="inline-block h-40 m-5" />
                     </h1>
                 </div>
             </div>
@@ -77,6 +80,7 @@ function Home() {
                     text="Registrarme"
                     paddingX="px-20"
                     paddingY="py-4"
+                    color="bg-[#c954a5]"
                 />
             </div>
 
@@ -123,8 +127,8 @@ function Home() {
                 </div>
             </div>
 
-           <DejanosCorreo />
-           
+            <DejanosCorreo />
+
         </div>
     );
 }

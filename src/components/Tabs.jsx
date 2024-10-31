@@ -7,7 +7,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
       <Button
         text="Mis CDTs"
         onClick={() => setActiveTab('CDTs')}
-        color={activeTab === 'CDTs' ? 'bg-[#C512C9]' : 'bg-transparent'}
+        color={activeTab === 'CDTs' ? 'bg-[#c954a5]' : 'bg-transparent'}
         textColor={activeTab === 'CDTs' ? 'text-white' : 'text-black'}
         border={activeTab === 'CDTs' ? 'border-transparent' : 'border-black'}
         disableHover={true}
@@ -15,7 +15,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
       <Button
         text="Cuentas de inversión"
         onClick={() => setActiveTab('Inversion')}
-        color={activeTab === 'Inversion' ? 'bg-[#C512C9]' : 'bg-transparent'}
+        color={activeTab === 'Inversion' ? 'bg-[#c954a5]' : 'bg-transparent'}
         textColor={activeTab === 'Inversion' ? 'text-white' : 'text-black'}
         border={activeTab === 'Inversion' ? 'border-transparent' : 'border-black'}
         disableHover={true}
@@ -23,7 +23,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
       <Button
         text="Cuenta de pensión"
         onClick={() => setActiveTab('Pension')}
-        color={activeTab === 'Pension' ? 'bg-[#C512C9]' : 'bg-transparent'}
+        color={activeTab === 'Pension' ? 'bg-[#c954a5]' : 'bg-transparent'}
         textColor={activeTab === 'Pension' ? 'text-white' : 'text-black'}
         border={activeTab === 'Pension' ? 'border-transparent' : 'border-black'}
         disableHover={true}
