@@ -41,7 +41,7 @@ function InvestmentPage() {
           <img src={couplehouse} alt="Couple with house" className="rounded-lg shadow-lg" />
         </div>
       </div>
-      <div className="w-full text-gray-800 px-72 mb-20">
+      <div className="w-full text-gray-600 px-72 mb-20">
           <h2 className="text-2xl font-bold mt-6 mb-4">Tipos de Fondos de Inversión en Colombia</h2>
           <h3 className="text-xl font-bold">Fondos de Inversión Colectiva (FIC)</h3>
           <p>Los FIC permiten a varias personas reunir sus recursos en un fondo común administrado por una sociedad gestora. Los fondos se invierten en diferentes tipos de activos, como acciones, bonos, y títulos de renta fija, lo que permite diversificar el riesgo y obtener rendimientos de acuerdo con el comportamiento del mercado.</p>

@@ -11,6 +11,7 @@ import LoggedHome from './pages/LoggedHome';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth0 } from "@auth0/auth0-react";
 import InvestmentPage from './pages/Crear/InvestmentPage';
+import NationalInvestmentOptions from './pages/Crear/ConoceOportunidadesNacionales';
 
 const domain = "mou-management.us.auth0.com";
 const clientId = "Mxqzv2au4wBRkmvPMUrKCpTiRoBWtm9B";
@@ -49,6 +50,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <InvestmentPage/>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/national-funds"
+                element={
+                  <ProtectedRoute>
+                    <NationalInvestmentOptions/>
                   </ProtectedRoute>
                 }
               />

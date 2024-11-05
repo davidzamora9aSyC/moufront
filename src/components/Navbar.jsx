@@ -23,7 +23,7 @@ function Navbar() {
     };
 
     return (
-        <nav className="flex justify-between items-center bg-white shadow p-4 pr-16">
+        <nav className="flex justify-between items-center bg-white shadow-lg p-4 pr-16 z-50">
             <div className="flex items-center">
                 <Link to="/">
                     <img src={mouLogo} alt="MOU Logo" className="h-12 mr-4 ml-5" />
