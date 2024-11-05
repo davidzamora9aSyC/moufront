@@ -10,6 +10,7 @@ import ArticuloFondoPensionObligatoria from './pages/ArticuloFondoDePensionOblig
 import LoggedHome from './pages/LoggedHome';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth0 } from "@auth0/auth0-react";
+import InvestmentPage from './pages/Crear/InvestmentPage';
 
 const domain = "mou-management.us.auth0.com";
 const clientId = "Mxqzv2au4wBRkmvPMUrKCpTiRoBWtm9B";
@@ -43,6 +44,15 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path="/create-fondo-inversion"
+                element={
+                  <ProtectedRoute>
+                    <InvestmentPage/>
+                  </ProtectedRoute>
+                }
+              />
+
             </Routes>
           </div>
           <Footer />
