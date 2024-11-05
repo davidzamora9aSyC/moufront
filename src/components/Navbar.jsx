@@ -54,6 +54,11 @@ function Navbar() {
                             Sobre nosotros
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/logged-home" className="text-gray-800 hover:text-gray-600 font-bold">
+                            Mis inversiones
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className="flex items-center space-x-4">
