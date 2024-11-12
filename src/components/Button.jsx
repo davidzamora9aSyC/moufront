@@ -7,11 +7,12 @@ function Button({
   textColor = 'text-white',
   border = 'border-transparent',
   disableHover = false,
-  textSize = 'text-base' 
+  textSize = 'text-base',
+  fullWidth = false 
 }) {
   return (
     <button
-      className={`${color} ${textColor} ${border} ${paddingX} ${paddingY} ${textSize} rounded-full ${disableHover ? '' : 'hover:bg-gray-800'} border`}
+      className={`${color} ${textColor} ${border} ${paddingX} ${paddingY} ${textSize} rounded-full ${disableHover ? '' : 'hover:bg-gray-800'} border ${fullWidth ? 'w-full' : ''}`}
       onClick={onClick}
     >
       {text}
