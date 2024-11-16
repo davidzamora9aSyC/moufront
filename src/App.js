@@ -13,7 +13,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import InvestmentPage from './pages/Crear/InvestmentPage';
 import NationalInvestmentOptions from './pages/Crear/ConoceOportunidadesNacionales';
 import FondosListados from './pages/Crear/FondosListados';
-import Dashboard from './components/Dashboard';
+import IntegratedDashboard from './components/Dashboards/IntegratedDashboard';
 
 const domain = "mou-management.us.auth0.com";
 const clientId = "Mxqzv2au4wBRkmvPMUrKCpTiRoBWtm9B";
@@ -43,7 +43,7 @@ function App() {
               <Route path="/create-fondo-inversion" element={<ProtectedRoute><InvestmentPage /></ProtectedRoute>} />
               <Route path="/national-funds" element={<ProtectedRoute><NationalInvestmentOptions /></ProtectedRoute>} />
               <Route path="/national-funds/:id" element={<ProtectedRoute><FondosListados /></ProtectedRoute>} />
-              <Route path="/national-funds/:id/:fondoName" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+              <Route path="/national-funds/:id/:fondoName" element={<ProtectedRoute><IntegratedDashboard /></ProtectedRoute>} />
             </Routes>
           </div>
           <Footer />
