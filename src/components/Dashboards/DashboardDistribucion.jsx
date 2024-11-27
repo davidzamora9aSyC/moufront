@@ -89,7 +89,7 @@ const DashboardDistribucion = () => {
                 </div>
 
                 <div className="w-1/3 mb-8">
-                    <PieChart data={data[activeIndex].details} onColorsSet={setColorsDetails} />
+                    <PieChart data={data[activeIndex].details} onColorsSet={setColorsDetails} second={true}/>
                 </div>
                 <div className='pt-12'>
                     <DetailsBox

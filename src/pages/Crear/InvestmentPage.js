@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
-import couplehouse from '../../assets/images/coupleHouse.jpg'; // Asegúrate de que la ruta de la imagen sea correcta
+import couplehouse from '../../assets/images/coupleHouse.jpg'; 
 
 function InvestmentPage() {
   const navigate = useNavigate();

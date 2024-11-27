@@ -8,7 +8,7 @@ import sfcSandbox from '../assets/images/sfcSandbox.jpg';
 import Footer from '../components/Footer';
 import fondoInversion from '../assets/images/fondosDeInversion.jpg';
 import DejanosCorreo from '../components/DejanosCorreo';
-import mouLogo from '../assets/images/mouLogo3.jpg';
+import mouLogo from '../assets/images/mouLogo4.png';
 function Home() {
     return (
         <div>

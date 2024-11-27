@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
-import mouLogo from '../assets/images/mouLogo3.jpg';
+import mouLogo from '../assets/images/mouLogo4.png';
 import Button from './Button';
 
 function Navbar() {

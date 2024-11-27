@@ -14,6 +14,10 @@ import InvestmentPage from './pages/Crear/InvestmentPage';
 import NationalInvestmentOptions from './pages/Crear/ConoceOportunidadesNacionales';
 import FondosListados from './pages/Crear/FondosListados';
 import IntegratedDashboard from './components/Dashboards/IntegratedDashboard';
+import RetirementPage from './pages/Crear/RetirementPage';
+import RetirementListedFunds from './pages/Crear/RetirementListedFunds';
+import CDsPage from './pages/Crear/CDsPage';
+import ListedCDs from './pages/Crear/ListedCDs';
 
 const domain = "mou-management.us.auth0.com";
 const clientId = "Mxqzv2au4wBRkmvPMUrKCpTiRoBWtm9B";
@@ -41,9 +45,15 @@ function App() {
               <Route path="/about-fondo-pension-obligatoria" element={<ArticuloFondoPensionObligatoria />} />
               <Route path="/logged-home" element={<ProtectedRoute><LoggedHome /></ProtectedRoute>} />
               <Route path="/create-fondo-inversion" element={<ProtectedRoute><InvestmentPage /></ProtectedRoute>} />
+              <Route path="/create-retirement-funds" element={<ProtectedRoute><RetirementPage /></ProtectedRoute>} />
+              <Route path="/create-CDs" element={<ProtectedRoute><CDsPage /></ProtectedRoute>} />
               <Route path="/national-funds" element={<ProtectedRoute><NationalInvestmentOptions /></ProtectedRoute>} />
               <Route path="/national-funds/:id" element={<ProtectedRoute><FondosListados /></ProtectedRoute>} />
-              <Route path="/national-funds/:id/:fondoName" element={<ProtectedRoute><IntegratedDashboard /></ProtectedRoute>} />
+              <Route path="/national-funds/:id/:fondoName" element={<ProtectedRoute><IntegratedDashboard type={"Inversion"} acquired={false} /></ProtectedRoute>} />
+              <Route path="/retirement-funds" element={<ProtectedRoute><RetirementListedFunds /></ProtectedRoute>} />
+              <Route path="/retirement-funds/:fondoName" element={<ProtectedRoute><IntegratedDashboard type={"Pension"} acquired={false} /></ProtectedRoute>} />
+              <Route path="/CDTs" element={<ProtectedRoute><ListedCDs /></ProtectedRoute>} />
+              <Route path="/CDTs/:Name" element={<ProtectedRoute><IntegratedDashboard type={"CDT"} acquired={false} /></ProtectedRoute>} />
             </Routes>
           </div>
           <Footer />
