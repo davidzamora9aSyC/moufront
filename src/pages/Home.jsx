@@ -21,16 +21,21 @@ function Home() {
                     />
                 </div>
 
-
                 <div className="md:w-1/2 h-full flex items-center justify-center bg-white p-8">
-                    <h1 className="text-5xl md:text-7xl font-bold text-center text-black m-10">
+                    <h1 className="text-5xl md:text-7xl font-bold text-center text-black mx-5 md:mx-10 mt-5 md:mt-10">
                         Construye tu futuro financiero con <br />
-                        <img src={mouLogo} alt="MOU Management Logo" className="inline-block h-40 m-5" />
+                        <img
+                            src={mouLogo}
+                            alt="MOU Management Logo"
+                            className="inline-block h-auto w-auto max-h-40 max-w-full mt-8 md:mt-10"
+                        />
                     </h1>
+
                 </div>
             </div>
 
-            <div className="flex flex-col items-center my-28">
+
+            <div className="flex flex-col items-center my-10 md:my-28">
                 <Button
                     onClick={() => console.log('Registro iniciado')}
                     text="Registrarme"
