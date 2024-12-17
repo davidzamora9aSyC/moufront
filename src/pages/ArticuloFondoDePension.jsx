@@ -5,8 +5,8 @@ import DejanosCorreo from '../components/DejanosCorreo';
 
 const ArticuloFondoDePension = () => {
     return (
-        <div className="p-6">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-40">
+        <div className="mx-6 my-16 xl:mx-20 2xl:mx-40 3xl:px-60 4xl:px-80" > 
+            <div className=" mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-20  lg:px-20">
                 <div className="lg:w-1/2">
                     <h1 className="text-3xl font-bold mb-4">Fondos de Pensión</h1>
                     <p className="font-semibold mb-10">Funcionamiento y detalles para el usuario</p>
@@ -21,17 +21,18 @@ const ArticuloFondoDePension = () => {
                 <div className="lg:w-1/2">
                     <img src={fondoInversion} alt="Fondos de Inversión" className="rounded-lg shadow-lg" />
                 </div>
-            </div>
 
-            <div className="w-full text-gray-600 px-72 mt-16 mb-20">
-                <div className="flex flex-col mx-96 my-10">
+            </div>
+            
+
+            <div className="w-full text-gray-600 lg:px-20  mb-20">
+                <div className="flex flex-col items-center mt-20 md:my-16 ">
                     <Button
                         onClick={() => console.log('Registro iniciado')}
-                        text="REGISTRARME"
-                        paddingX="px-10"
-                        paddingY="py-2"
+                        text="Registrarme"
+                        paddingX="px-32"
+                        paddingY="py-3"
                         color="bg-[#002bc8]"
-                        textSize="text-lg"
                     />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Beneficios de los Fondos de Pensión</h2>
