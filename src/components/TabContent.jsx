@@ -7,39 +7,41 @@ import { useNavigate } from 'react-router-dom';
 
 const TabContent = ({ activeTab }) => {
   const containerStyles = "rounded-3xl border border-black pt-6 mb-4 min-h-[60vh]";
-  const contentLeftColumn = "text-center md:text-left md:w-1/2 space-y-6";
-  const imageLeftColumn = "hidden md:flex md:w-1/2 justify-start ml-28";
-  const imageRightColumn = "hidden md:flex md:w-1/2 justify-end mr-32";
-  const image2RightColumn = "hidden md:flex md:w-1/2 justify-end mr-0 rounded-xl";
+  const contentLeftColumn = "text-center md:text-left md:w-1/2 space-y-6 my-auto mr-5";
+  const imageColumnBase = "w-full object-contain mx-auto";
+  const imageRightColumn = "hidden md:flex md:w-1/2 justify-end items-center mr-6";
+  const imageLeftColumn = "hidden md:flex md:w-1/2 justify-start items-center ml-6";
+
   const navigate = useNavigate();
 
-  const goToInvestmentDescription = () => {
-    navigate('/create-fondo-inversion');
-  };
-  const goToRetirementDescription = () => {
-    navigate('/create-retirement-funds');
-  };
-  const goToCDsDescription = () => {
-    navigate('/create-CDs');
-  };
+  const goToInvestmentDescription = () => navigate('/create-fondo-inversion');
+  const goToRetirementDescription = () => navigate('/create-retirement-funds');
+  const goToCDsDescription = () => navigate('/create-CDs');
+
   if (activeTab === 'CDTs') {
     return (
       <div className={`${containerStyles} flex flex-col md:flex-row bg-[#E2E3DE]`}>
         <div className={contentLeftColumn}>
-          <h2 className="text-4xl font-extrabold mt-40 mb-20 ml-20 mr-10">AÚN NO HAS ADQUIRIDO NINGÚN CDT</h2>
-          <div className='ml-20'>
-          <Button
+          <h2 className="text-2xl md:text-4xl font-extrabold mt-10 md:mt-40 mb-10 md:mb-20 ml-4 md:ml-20 mr-4 md:mr-10">
+            AÚN NO HAS ADQUIRIDO NINGÚN CDT
+          </h2>
+          <div className="ml-4 md:ml-20 pb-10">
+            <Button
               text="VER FONDOS DE INVERSIÓN"
               color="bg-[#002bc8]"
-              paddingX="px-20"
+              paddingX="px-10 md:px-20"
               paddingY="py-2"
-              textSize="text-2xl"
+              textSize="text-lg md:text-2xl"
               onClick={goToCDsDescription}
             />
           </div>
         </div>
         <div className={imageRightColumn}>
-          <img src={noCDTs} alt="Sin CDTs" className="w-full max-w-sm w-auto h-auto" />
+          <img
+            src={noCDTs}
+            alt="Sin CDTs"
+            className={`${imageColumnBase} max-h-60 md:max-h-96 rounded-xl rounded-xl`}
+          />
         </div>
       </div>
     );
@@ -49,18 +51,26 @@ const TabContent = ({ activeTab }) => {
     return (
       <div className={`${containerStyles} flex flex-col md:flex-row bg-[#E2E3DE]`}>
         <div className={imageLeftColumn}>
-          <img src={inversionhome} alt="Inversiones" className="w-full max-w-sm rounded w-auto h-auto" />
+          <img
+            src={inversionhome}
+            alt="Inversiones"
+            className={`${imageColumnBase} max-h-60 md:max-h-96 rounded-xl rounded-3xl`}
+          />
         </div>
         <div className={contentLeftColumn}>
-          <h2 className="text-4xl font-extrabold mt-40 mb-20 ml-20 mr-10">ABRE TU CUENTA DE INVERSIÓN HOY</h2>
-          <p className="ml-20 mb-6">Accede a fondos de inversión nacionales e internacionales</p>
-          <div className='ml-20'>
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-10 ml-4 xl:ml-20">
+            ABRE TU CUENTA DE INVERSIÓN HOY
+          </h2>
+          <p className="ml-4 xl:ml-20 mb-6">
+            Accede a fondos de inversión nacionales e internacionales
+          </p>
+          <div className="ml-4 xl:ml-20 mr-4 md:mr-10">
             <Button
               text="VER FONDOS DE INVERSIÓN"
               color="bg-[#002bc8]"
-              paddingX="px-20"
+              paddingX="px-10 md:px-20"
               paddingY="py-2"
-              textSize="text-2xl"
+              textSize="text-lg lg:text-xl"
               onClick={goToInvestmentDescription}
             />
           </div>
@@ -73,21 +83,29 @@ const TabContent = ({ activeTab }) => {
     return (
       <div className={`${containerStyles} flex flex-col md:flex-row bg-[#EAE8D7]`}>
         <div className={contentLeftColumn}>
-          <h2 className="text-4xl font-extrabold mt-40 mb-20 ml-20 mr-10">CREA UN FUTURO CON NOSOTROS</h2>
-          <p className="ml-20 mb-6">Abre una cuenta de pensión hoy y ahorra para la vejez</p>
-          <div className='ml-20'>
-          <Button
+          <h2 className="text-2xl md:text-4xl font-extrabold mt-10 md:mt-40 mb-10 md:mb-20 ml-4 md:ml-20">
+            CREA UN FUTURO CON NOSOTROS
+          </h2>
+          <p className="ml-4 md:ml-20 mb-6">
+            Abre una cuenta de pensión hoy y ahorra para la vejez
+          </p>
+          <div className="ml-4 md:ml-20">
+            <Button
               text="VER FONDOS DE INVERSIÓN"
               color="bg-[#002bc8]"
-              paddingX="px-20"
+              paddingX="px-10 md:px-20"
               paddingY="py-2"
-              textSize="text-2xl"
+              textSize="text-lg md:text-2xl"
               onClick={goToRetirementDescription}
             />
           </div>
         </div>
-        <div className={image2RightColumn}>
-          <img src={pensionesHome} alt="Pensiones" className="w-full max-w-md  rounded-3xl w-auto h-auto" />
+        <div className="hidden md:flex md:w-1/2 justify-center pb-10">
+          <img
+            src={pensionesHome}
+            alt="Pensiones"
+            className={`${imageColumnBase} max-h-60 md:max-h-96 rounded-7xl `}
+          />
         </div>
       </div>
     );
