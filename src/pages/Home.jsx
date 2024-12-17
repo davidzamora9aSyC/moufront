@@ -11,7 +11,7 @@ import DejanosCorreo from '../components/DejanosCorreo';
 import mouLogo from '../assets/images/mouLogo4.png';
 function Home() {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <div className="flex flex-col md:flex-row w-full h-[80vh]">
                 <div className="md:w-1/2 h-full">
                     <img
