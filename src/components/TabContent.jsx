@@ -10,7 +10,7 @@ const TabContent = ({ activeTab }) => {
   const contentLeftColumn = "text-center md:text-left md:w-1/2 space-y-6 my-auto mr-5";
   const imageColumnBase = "w-full object-contain mx-auto";
   const imageRightColumn = "hidden md:flex md:w-1/2 justify-end items-center mr-6";
-  const imageLeftColumn = "hidden md:flex md:w-1/2 justify-start items-center ml-6";
+  const imageLeftColumn = "flex justify-center items-center w-full mb-4 md:w-1/2 md:mb-0";
 
   const navigate = useNavigate();
 
@@ -49,22 +49,24 @@ const TabContent = ({ activeTab }) => {
 
   if (activeTab === 'Inversion') {
     return (
-      <div className={`${containerStyles} flex flex-col md:flex-row bg-[#E2E3DE]`}>
+
+
+      <div className={`${containerStyles} flex flex-col bg-[#E2E3DE] items-center text-center md:text-left`}>
         <div className={imageLeftColumn}>
           <img
             src={inversionhome}
             alt="Inversiones"
-            className={`${imageColumnBase} max-h-60 md:max-h-96 rounded-xl rounded-3xl`}
+            className={`${imageColumnBase} max-h-60 md:max-h-96 rounded-xl md:rounded-3xl`}
           />
         </div>
-        <div className={contentLeftColumn}>
-          <h2 className="text-2xl md:text-4xl font-extrabold mb-10 ml-4 xl:ml-20">
+        <div className="w-full flex flex-col items-center md:items-start">
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-6 ml-0 md:ml-20">
             ABRE TU CUENTA DE INVERSIÓN HOY
           </h2>
-          <p className="ml-4 xl:ml-20 mb-6">
+          <p className="mb-6 ml-0 md:ml-20">
             Accede a fondos de inversión nacionales e internacionales
           </p>
-          <div className="ml-4 xl:ml-20 mr-4 md:mr-10">
+          <div className="flex justify-center md:justify-start mb-5 sm:mb-0 ml-0 md:ml-20 mr-4 md:mr-10">
             <Button
               text="VER FONDOS DE INVERSIÓN"
               color="bg-[#002bc8]"
