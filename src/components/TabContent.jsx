@@ -30,7 +30,7 @@ const TabContent = ({ activeTab }) => {
           <div className='ml-20'>
           <Button
               text="VER FONDOS DE INVERSIÓN"
-              color="bg-[#c954a5]"
+              color="bg-[#002bc8]"
               paddingX="px-20"
               paddingY="py-2"
               textSize="text-2xl"
@@ -57,7 +57,7 @@ const TabContent = ({ activeTab }) => {
           <div className='ml-20'>
             <Button
               text="VER FONDOS DE INVERSIÓN"
-              color="bg-[#c954a5]"
+              color="bg-[#002bc8]"
               paddingX="px-20"
               paddingY="py-2"
               textSize="text-2xl"
@@ -78,7 +78,7 @@ const TabContent = ({ activeTab }) => {
           <div className='ml-20'>
           <Button
               text="VER FONDOS DE INVERSIÓN"
-              color="bg-[#c954a5]"
+              color="bg-[#002bc8]"
               paddingX="px-20"
               paddingY="py-2"
               textSize="text-2xl"

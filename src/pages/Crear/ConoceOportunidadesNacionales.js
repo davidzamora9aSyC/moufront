@@ -13,7 +13,7 @@ function NationalInvestmentOptions() {
 
       <div className="w-full flex justify-between items-start mt-20">
         <div>
-          <h1 className="text-5xl font-semibold text-[#c954a5] mb-12 ">Conoce las opciones</h1>
+          <h1 className="text-5xl font-semibold text-[#002bc8] mb-12 ">Conoce las opciones</h1>
           <p className="text-gray-700 text-2xl ">
             Encuentra una selección de fondos de inversión nacionales, gestionados por Skandia,
             una entidad reconocida por su solidez y experiencia en el mercado financiero.
@@ -26,7 +26,7 @@ function NationalInvestmentOptions() {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-20 mb-20">
 
         <div className=" md:col-span-3 pr-36">
-          <h2 className="text-4xl font-semibold text-[#c954a5] mb-12">Elige tu perfil de riesgo</h2>
+          <h2 className="text-4xl font-semibold text-[#002bc8] mb-12">Elige tu perfil de riesgo</h2>
           <p className="text-gray-700 mb-4 text-lg">
             El perfil de riesgo es una evaluación de la capacidad y disposición de un inversor para asumir
             pérdidas potenciales en busca de retornos, influenciado por factores como tolerancia al riesgo,

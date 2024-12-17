@@ -63,7 +63,7 @@ function Navbar() {
             </div>
             <div className="flex items-center space-x-4">
                 {isAuthenticated ? (
-                    <Button onClick={handleLogout} text="Cerrar sesión" color= "bg-[#c954a5]" />
+                    <Button onClick={handleLogout} text="Cerrar sesión" color="bg-[#002bc8]" />
                 ) : (
                     <>
                         <Button onClick={handleRegister} text="Registrarme"  />

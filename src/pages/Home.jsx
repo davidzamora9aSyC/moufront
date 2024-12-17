@@ -80,7 +80,7 @@ function Home() {
                     text="Registrarme"
                     paddingX="px-20"
                     paddingY="py-4"
-                    color="bg-[#c954a5]"
+                    color="bg-[#002bc8]"
                 />
             </div>
 
