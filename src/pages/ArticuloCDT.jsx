@@ -21,7 +21,7 @@ const ArticuloCDT = () => {
             </div>
 
             <div className="w-full text-gray-600 lg:px-20 mb-20">
-                <div className="flex flex-col items-center mt-20 md:my-16">
+                <div className="flex flex-col items-center my-10 md:my-16">
                     <Button
                         onClick={() => console.log('Registro iniciado')}
                         text="REGISTRARME"
@@ -47,7 +47,7 @@ const ArticuloCDT = () => {
                 <p className="mb-6">
                     Los CDTs son una herramienta valiosa para quienes buscan una opción de inversión segura y con retornos predecibles en Colombia.
                 </p>
-                <div className="flex flex-col items-center mt-16">
+                <div className="flex flex-col items-center my-10">
                     <Button
                         onClick={() => console.log('Registro iniciado')}
                         text="REGISTRARME"

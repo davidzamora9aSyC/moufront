@@ -26,7 +26,7 @@ const ArticuloFondoDePension = () => {
             
 
             <div className="w-full text-gray-600 lg:px-20  mb-20">
-                <div className="flex flex-col items-center mt-20 md:my-16 ">
+                <div className="flex flex-col items-center my-10 md:my-16 ">
                     <Button
                         onClick={() => console.log('Registro iniciado')}
                         text="Registrarme"
