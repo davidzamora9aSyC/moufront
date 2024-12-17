@@ -5,66 +5,75 @@ import DejanosCorreo from '../components/DejanosCorreo';
 
 const ArticuloFondosDeInversion = () => {
     return (
-        <div className="flex flex-col items-center p-4">
-            <img src={fondoInversion} alt="Fondos de Inversión en Colombia" className="mt-4 mb-20 mx-auto" />
-            <div className="text-left mx-40">
-                <h1 className="font-bold text-2xl mb-2">Fondos de Inversión en Colombia: Una Alternativa para Potenciar el Ahorro</h1>
-                <p className='mt-5 mb-16'>
-                    Los fondos de inversión son instrumentos financieros diseñados para reunir el capital de múltiples inversores y administrarlo de manera conjunta, 
-                    con el objetivo de generar rendimientos a través de diferentes activos, como acciones, bonos, o bienes inmuebles. En Colombia, estos fondos son una 
-                    opción popular para quienes buscan diversificar su portafolio y maximizar sus ahorros sin la necesidad de gestionar individualmente sus inversiones. 
-                    A continuación, se analiza su funcionamiento, tipos y aspectos relevantes para elegir el fondo adecuado.
-                </p>
-                <p className='mb-16'>
-                    Los fondos de inversión permiten a los inversores acceder a mercados que, de forma individual, podrían ser difíciles de gestionar por falta de 
-                    conocimiento o capital. Están gestionados por profesionales que buscan optimizar los rendimientos a partir de un conjunto de estrategias y análisis 
-                    del mercado. Los inversionistas compran participaciones en el fondo, y sus rendimientos se basan en el comportamiento de los activos subyacentes.
-                </p>
-                <div className='flex justify-center'>
+        <div className="p-6">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-40">
+                <div className="lg:w-1/2">
+                    <h1 className="text-3xl font-bold mb-4">Fondos de Inversión en Colombia: Una Alternativa para Potenciar el Ahorro</h1>
+                    <p className="text-gray-600 mb-6">
+                        Los fondos de inversión son instrumentos financieros diseñados para reunir el capital de múltiples inversores y administrarlo de manera conjunta, con el objetivo de generar rendimientos a través de diferentes activos, como acciones, bonos, o bienes inmuebles. En Colombia, estos fondos son una opción popular para quienes buscan diversificar su portafolio y maximizar sus ahorros sin la necesidad de gestionar individualmente sus inversiones.
+                    </p>
+                    <p className="text-gray-600 mb-6">
+                        Los fondos de inversión permiten a los inversores acceder a mercados que, de forma individual, podrían ser difíciles de gestionar por falta de conocimiento o capital. Están gestionados por profesionales que buscan optimizar los rendimientos a partir de un conjunto de estrategias y análisis del mercado.
+                    </p>
+                </div>
+                <div className="lg:w-1/2">
+                    <img src={fondoInversion} alt="Fondos de Inversión" className="rounded-lg shadow-lg" />
+                </div>
+            </div>
+
+            <div className="w-full text-gray-600 px-72 mt-16 mb-20">
+                <div className="flex flex-col mx-96 my-10">
                     <Button
                         onClick={() => console.log('Registro iniciado')}
-                        text="Registrarme"
-                        paddingX="px-40"
-                        paddingY="py-3"
+                        text="REGISTRARME"
+                        paddingX="px-10"
+                        paddingY="py-2"
                         color="bg-[#002bc8]"
+                        textSize="text-lg"
                     />
                 </div>
-
-                <h2 className="font-bold text-lg mt-20 mb-2">Tipos de Fondos de Inversión en Colombia</h2>
-                <p className='mt-5 mb-16'>
-                    En Colombia, existen varios tipos de fondos que se adaptan a diferentes perfiles de riesgo y objetivos financieros:
-                </p>
-                <ul className='list-disc ml-6 mb-16'>
+                <h2 className="text-2xl font-bold mb-4">Tipos de Fondos de Inversión en Colombia</h2>
+                <ul className="list-disc list-inside mb-6">
                     <li><strong>Fondos Abiertos y Cerrados</strong>
-                        <ul className='list-disc ml-6'>
-                            <li><strong>Fondos Abiertos:</strong> Permiten la entrada y salida de inversionistas en cualquier momento, con una liquidez considerable. El valor de la participación cambia diariamente con base en el valor de mercado de los activos.</li>
-                            <li><strong>Fondos Cerrados:</strong> Tienen un plazo definido y no permiten el retiro hasta que finalice el período estipulado. Son adecuados para inversiones a mediano o largo plazo y suelen invertir en activos menos líquidos, como bienes raíces o infraestructura.</li>
+                        <ul className="list-disc ml-6">
+                            <li><strong>Fondos Abiertos:</strong> Permiten la entrada y salida de inversionistas en cualquier momento, con una liquidez considerable.</li>
+                            <li><strong>Fondos Cerrados:</strong> Tienen un plazo definido y no permiten retiros hasta el final del periodo.</li>
                         </ul>
                     </li>
-                    <li className='mt-4'><strong>Fondos de Renta Fija y Variable</strong>
-                        <ul className='list-disc ml-6'>
-                            <li><strong>Renta Fija:</strong> Invierten en instrumentos como bonos o deuda pública, donde los rendimientos son relativamente estables y predecibles. Son ideales para inversionistas con un perfil conservador.</li>
-                            <li><strong>Renta Variable:</strong> Se enfocan en activos como acciones, cuyo valor fluctúa según las condiciones del mercado. Ofrecen un potencial de rentabilidad mayor, pero con un riesgo más alto, siendo adecuados para perfiles agresivos.</li>
+                    <li><strong>Fondos de Renta Fija y Variable</strong>
+                        <ul className="list-disc ml-6">
+                            <li><strong>Renta Fija:</strong> Rendimientos estables y predecibles, ideales para perfiles conservadores.</li>
+                            <li><strong>Renta Variable:</strong> Inversión en acciones con mayor rentabilidad potencial, pero con riesgo más alto.</li>
                         </ul>
                     </li>
-                    <li className='mt-4'><strong>Fondos Multiactivos</strong>
-                        <p>Combinan renta fija y variable para crear un portafolio equilibrado, adaptándose a los objetivos y tolerancia al riesgo de los inversores. Estos fondos diversifican la inversión en diferentes clases de activos, buscando maximizar el rendimiento con un riesgo moderado.</p>
+                    <li><strong>Fondos Multiactivos</strong>
+                        <p>Combinan renta fija y variable, adaptándose a los objetivos y tolerancia al riesgo de los inversores.</p>
                     </li>
                 </ul>
 
-                <div className='flex justify-center mt-20'>
+                <div className="flex flex-col mx-96 my-10">
                     <Button
                         onClick={() => console.log('Registro iniciado')}
-                        text="Registrarme"
-                        paddingX="px-40"
-                        paddingY="py-3"
+                        text="REGISTRARME"
+                        paddingX="px-10"
+                        paddingY="py-2"
                         color="bg-[#002bc8]"
+                        textSize="text-lg"
                     />
                 </div>
+                <h2 className="text-2xl font-bold mt-16 mb-4">Beneficios de los Fondos de Inversión</h2>
+                <ul className="list-disc list-inside mb-6">
+                    <li>Diversificación: Permiten invertir en una amplia variedad de activos, reduciendo el riesgo individual.</li>
+                    <li>Acceso a Mercados: Facilitan el acceso a inversiones complejas para individuos con menor capital.</li>
+                    <li>Administración Profesional: Gestionados por expertos que buscan maximizar rendimientos.</li>
+                </ul>
+                <p className="mb-6">
+                    Empieza a invertir hoy mismo con MOU Management y potencia tus ahorros con estrategias adaptadas a tus objetivos financieros. Tu futuro financiero comienza con las decisiones de hoy.
+                </p>
             </div>
             <DejanosCorreo />
         </div>
     );
-}
+};
 
 export default ArticuloFondosDeInversion;
