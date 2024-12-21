@@ -26,15 +26,7 @@ const ArticuloFondoDePension = () => {
             
 
             <div className="w-full text-gray-600 lg:px-20  mb-20">
-                <div className="flex flex-col items-center my-10 md:my-16 ">
-                    <Button
-                        onClick={() => console.log('Registro iniciado')}
-                        text="Registrarme"
-                        paddingX="px-32"
-                        paddingY="py-3"
-                        color="bg-[#002bc8]"
-                    />
-                </div>
+    
                 <h2 className="text-2xl font-bold mb-4">Beneficios de los Fondos de Pensión</h2>
                 <ul className="list-disc list-inside mb-6">
                     <li>Ahorro para la vejez: Garantía de ingreso en la jubilación.</li>

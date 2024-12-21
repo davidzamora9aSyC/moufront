@@ -26,9 +26,9 @@ function Navbar() {
     return (
         <nav className="flex justify-between items-center bg-white shadow-lg p-4 z-50 relative">
 
-        
+
             <div className="md:hidden flex items-center w-full">
-              
+
                 <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         {isOpen ? (
@@ -39,7 +39,7 @@ function Navbar() {
                     </svg>
                 </button>
 
-    
+
                 <div className="absolute left-1/2 transform -translate-x-1/2">
                     <Link to="/">
                         <img src={mouLogo} alt="MOU Logo" className="h-12" />
@@ -48,23 +48,28 @@ function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center justify-between w-full">
-                
+
                 <div className="flex items-center space-x-6">
                     <Link to="/">
                         <img src={mouLogo} alt="MOU Logo" className="h-12" />
                     </Link>
 
                     <div className="flex items-center space-x-4">
+                        <Link to="/" className="text-gray-800 font-bold">Sobre nosotros</Link>
                         <Link to="/about-fondo-pension" className="text-gray-800 font-bold">Fondos de pensión</Link>
                         <Link to="/about-fondo-inversion" className="text-gray-800 font-bold">Fondos de inversión</Link>
-                        <Link to="/about-CDT" className="text-gray-800 font-bold">CDTs</Link>
+
                         <Link to="/about-fondo-pension-obligatoria" className="text-gray-800 font-bold">Mi cuenta Colpensiones</Link>
-                        <Link to="/" className="text-gray-800 font-bold">Sobre nosotros</Link>
-                        <Link to="/logged-home" className="text-gray-800 font-bold">Mis inversiones</Link>
+
+                        <Link to="/about-CDT" className="text-gray-800 font-bold">CDTs</Link>
+                        {isAuthenticated && (
+                            <Link to="/logged-home" className="text-gray-800 font-bold">Mis inversiones</Link>
+                        )}
                     </div>
+
                 </div>
 
-           
+
                 <div className="flex items-center space-x-4">
                     {isAuthenticated ? (
                         <Button onClick={handleLogout} text="Cerrar sesión" color="bg-[#002bc8]" />

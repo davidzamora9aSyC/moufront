@@ -55,15 +55,7 @@ const ArticuloFondosDeInversion = () => {
                     </li>
                 </ul>
 
-                <div className="flex flex-col items-center my-10">
-                    <Button
-                        onClick={() => console.log('Registro iniciado')}
-                        text="REGISTRARME"
-                        paddingX="px-32"
-                        paddingY="py-3"
-                        color="bg-[#002bc8]"
-                    />
-                </div>
+       
                 <h2 className="text-2xl font-bold mt-16 mb-4">Beneficios de los Fondos de Inversión</h2>
                 <ul className="list-disc list-inside mb-6">
                     <li>Diversificación: Permiten invertir en una amplia variedad de activos, reduciendo el riesgo individual.</li>

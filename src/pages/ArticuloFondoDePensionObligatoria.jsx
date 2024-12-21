@@ -56,15 +56,6 @@ const ArticuloFondoPensionObligatoria = () => {
                     <li>Fondo de retiro programado: Diseñado para quienes ya están pensionados.</li>
                 </ul>
 
-                <div className="flex flex-col items-center my-10">
-                    <Button
-                        onClick={() => console.log('Registro iniciado')}
-                        text="REGISTRARME"
-                        paddingX="px-32"
-                        paddingY="py-3"
-                        color="bg-[#002bc8]"
-                    />
-                </div>
             </div>
             <DejanosCorreo />
         </div>
