@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DashboardCifrasValorCuenta from './DashboardCifrasValorCuenta';
 import DashboardDistribucion from './DashboardDistribucion';
 import Selector from './Selector';
+import Dropdown from '../Dropdown';
 import DashboardMovimientos from './DashboardMovimientos';
 import DashboardCifrasRendimientos from './DashboardCifrasRendimientos';
 
@@ -12,35 +13,47 @@ const IntegratedDashboard = ({ inside, acquired, type }) => {
   let titulo;
 
   if (type === 'CDT') {
-      titulo = "Nombre del CDT";
+    titulo = "Nombre del CDT";
   } else if (type === 'Inversion') {
-      titulo = "Nombre de la cuenta de inversión";
+    titulo = "Nombre de la cuenta de inversión";
   } else if (type === 'Pension') {
-      titulo = "Nombre de la cuenta de pensión";
+    titulo = "Nombre de la cuenta de pensión";
   }
 
   return (
     <div className={`px-20 ${inside ? '' : 'mt-8'}`}>
-      {/* Encabezado con Nombre de Cuenta y Selector */}
       <div className="flex mb-8">
-        {/* Columna izquierda: Título */}
         <div className="w-1/2">
           <h1 className="text-2xl font-bold">{titulo}</h1>
         </div>
-        {/* Columna derecha: Selector */}
-        <div className="w-1/2 flex justify-end">
+
+        <div className="w-1/2 flex justify-end hidden lg:block">
+
           <Selector
             options={options}
             onSelect={(option) => setSelectedOption(option)}
           />
+
+
         </div>
+        <div className="w-1/2 flex justify-end block lg:hidden">
+
+
+          <Dropdown
+            options={options}
+            onSelect={(option) => setSelectedOption(option)}
+          />
+
+        </div>
+
+
+
       </div>
 
-      {/* Conditionally render dashboards based on the selected option */}
       {selectedOption === 'Distribucion' && <DashboardDistribucion />}
-      {selectedOption === 'Rendimientos'  && <DashboardCifrasRendimientos inside={inside}/>}
-      {selectedOption === 'Valor Cuenta' && <DashboardCifrasValorCuenta inside={inside}/>}
-        {selectedOption === 'Movimientos' && <DashboardMovimientos />}
+      {selectedOption === 'Rendimientos' && <DashboardCifrasRendimientos inside={inside} />}
+      {selectedOption === 'Valor Cuenta' && <DashboardCifrasValorCuenta inside={inside} />}
+      {selectedOption === 'Movimientos' && <DashboardMovimientos />}
     </div>
   );
 };

@@ -1,14 +1,10 @@
-import { useEffect } from 'react';
+import { useMemo, useEffect } from 'react';
 import { PieChart as MinimalPieChart } from 'react-minimal-pie-chart';
 
-const defaultColors = ['#8a2be2', '#daa520', '#dc143c', '#008b8b'];
 
-const PieChart = ({ data, onSelect, onColorsSet, second }) => {
-    const computedColors = data.map((entry, index) => defaultColors[index % defaultColors.length]);
 
-    useEffect(() => {
-        onColorsSet(computedColors); 
-    }, [computedColors, onColorsSet]);
+const PieChart = ({ data, onSelect, computedColors, second }) => {
+    
     
     return (
         <MinimalPieChart

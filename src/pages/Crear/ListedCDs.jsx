@@ -13,9 +13,11 @@ function ListedCDs() {
 
     return (
         <div className="mx-auto px-4 sm:px-6 lg:px-72 bg-white font-sans">
-            <div className="flex justify-between items-center mt-20">
-                <h1 className="text-5xl font-semibold text-[#4A90E2]">Certificados de Depósito Disponibles</h1>
-                <img src={skandia} alt="Skandia Logo" className="h-16" />
+            <div className="flex flex-wrap justify-center sm:justify-between items-center mt-20">
+                <img src={skandia} alt="Skandia Logo" className="h-16 mb-4 sm:mb-0 sm:mr-4" />
+                <h1 className="text-5xl font-semibold text-[#4A90E2] text-center sm:text-left">
+                    Certificados de Depósito Disponibles
+                </h1>
             </div>
             <div className="w-full mt-24 mb-40">
                 <Lista titles={titulos} data={datos} colors={colores} />

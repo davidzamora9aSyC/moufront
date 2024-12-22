@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PieChart from './PieChart';
 import DetailsBox from './Details';
+import { useMemo, useEffect } from 'react';
 
 const DashboardDistribucion = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -53,25 +54,41 @@ const DashboardDistribucion = () => {
 
 
     const handleSelect = (index) => {
-        setActiveIndex(index);
+        if (index !== activeIndex) {
+            setActiveIndex(index);
+        }
     };
 
+
+    const defaultColors = ['#8a2be2', '#daa520', '#dc143c', '#008b8b'];
+
+
+    const computedColors = useMemo(
+        () => data.map((entry, index) => defaultColors[index % defaultColors.length]),
+        [data]
+    );
+
+
+
     return (
-        <div className="flex divide-x divide-black divide-dotted my-12">
-            <div className="w-1/2 py-5 flex flex-col items-center space-y-6 px-20">
+        <div className="flex flex-col lg:flex-row divide-y lg:divide-x lg:divide-y-0 divide-black divide-dotted my-12">
+            <div className="w-full lg:w-1/2 py-5 flex flex-col items-center space-y-6 px-6 lg:px-20">
                 <h2 className="text-center text-lg font-bold mb-8">Distribución general de los activos</h2>
-                <div className="w-1/3 mb-8">
-                    <PieChart data={data} onSelect={handleSelect} onColorsSet={setColorsMain} />
+                <div className="w-2/3 lg:w-1/3 mb-8">
+                    <PieChart data={data} onSelect={handleSelect} computedColors={computedColors} />
                 </div>
-                <div className='pt-12'>
-                    <DetailsBox data={data} colors={colorsMain} />
+                <div className="pt-12">
+                    <DetailsBox data={data} colors={computedColors} />
                 </div>
             </div>
-            <div className="w-1/2 py-5 flex flex-col items-center space-y-6 px-20">
+            <div className="w-full lg:w-1/2 py-5 flex flex-col items-center space-y-6 px-6 lg:px-20">
                 <div className="flex justify-between items-center w-full mb-8">
                     <h2 className="text-lg font-bold">Detalles</h2>
                     <div className="relative">
-                        <select className="appearance-none bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-500 text-sm pl-4 pr-8 pb-1" onChange={(e) => handleSelect(e.target.selectedIndex)}>
+                        <select
+                            className="appearance-none bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-500 text-sm pl-4 pr-8 pb-1"
+                            onChange={(e) => handleSelect(e.target.selectedIndex)}
+                        >
                             {data.map((item, index) => (
                                 <option key={index}>{item.label}</option>
                             ))}
@@ -88,10 +105,10 @@ const DashboardDistribucion = () => {
                     </div>
                 </div>
 
-                <div className="w-1/3 mb-8">
-                    <PieChart data={data[activeIndex].details} onColorsSet={setColorsDetails} second={true}/>
+                <div className="w-2/3 lg:w-1/3 mb-8">
+                    <PieChart data={data[activeIndex].details} computedColors={computedColors} second={true} />
                 </div>
-                <div className='pt-12'>
+                <div className="pt-12">
                     <DetailsBox
                         data={data[activeIndex].details}
                         colors={colorsDetails}
@@ -102,6 +119,8 @@ const DashboardDistribucion = () => {
                 </div>
             </div>
         </div>
+
+
     );
 };
 

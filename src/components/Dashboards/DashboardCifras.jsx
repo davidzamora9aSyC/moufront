@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import ChartComponent from './ChartComponent'; // Nuestro componente de gráfico abstracto
+import ChartComponent from './ChartComponent';
 
-const DashboardCifras = ({ inside, titles}) => {
-  const [activeOption, setActiveOption] = useState(0); // Usaremos índices para el selector
-  const [timeFrame, setTimeFrame] = useState('Meses'); // Para el selector de tiempo
-  const [titulos, setTitulos] =  useState(titles? titles: ["Rendimientos de portafolio en el tiempo","Rendimientos por tipo de activo"] );
+const DashboardCifras = ({ inside, titles }) => {
+  const [activeOption, setActiveOption] = useState(0);
+  const [timeFrame, setTimeFrame] = useState('Meses');
+  const [titulos, setTitulos] = useState(titles ? titles : ["Rendimientos de portafolio en el tiempo", "Rendimientos por tipo de activo"]);
   const timeFrameOptions = ['Años', 'Meses', 'Semanas'];
-  
+
   const handleActiveOptionChange = (e) => {
     setActiveOption(e.target.selectedIndex);
   };
@@ -23,11 +23,10 @@ const DashboardCifras = ({ inside, titles}) => {
 
   return (
     <div
-      className={`flex divide-x divide-black divide-dotted my-12 ${inside ? '' : 'mb-20'
-        }`}
+      className={`flex flex-col lg:flex-row divide-y lg:divide-x lg:divide-y-0 divide-black divide-dotted my-12 ${inside ? '' : 'mb-20'}`}
     >
       {/* Columna Izquierda */}
-      <div className="w-1/2 py-5 flex flex-col space-y-6 pr-20">
+      <div className="w-full lg:w-1/2 py-5 flex flex-col space-y-6 px-6 lg:pr-20">
         <h2 className="text-center text-lg font-bold mb-8">
           {titulos[0]}
         </h2>
@@ -51,7 +50,7 @@ const DashboardCifras = ({ inside, titles}) => {
         </div>
       </div>
       {/* Columna Derecha */}
-      <div className="w-1/2 py-5 flex flex-col space-y-6 pl-20">
+      <div className="w-full lg:w-1/2 py-5 flex flex-col space-y-6 px-6 lg:pl-20">
         {/* Título y Selector de Tipo de Activo */}
         <div className="flex justify-between items-center w-full mb-8">
           <h2 className="text-lg font-bold">{titulos[1]}</h2>
