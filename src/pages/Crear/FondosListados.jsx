@@ -9,7 +9,7 @@ function FondosListados() {
 
     useEffect(() => {
 
-        fetch('http://mouback.endomedicos.com/fondos-skandia')
+        fetch('https://mouback.endomedicos.com/fondos-skandia')
             .then((response) => response.json())
             .then((data) => {
                 const datosFormateados = data.map((fondo) => [
