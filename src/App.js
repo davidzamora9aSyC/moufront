@@ -18,6 +18,7 @@ import RetirementPage from './pages/Crear/RetirementPage';
 import RetirementListedFunds from './pages/Crear/RetirementListedFunds';
 import CDsPage from './pages/Crear/CDsPage';
 import ListedCDs from './pages/Crear/ListedCDs';
+import CDTDetails from './pages/Crear/CDTDetails';
 
 const domain = "mou-management.us.auth0.com";
 const clientId = "Mxqzv2au4wBRkmvPMUrKCpTiRoBWtm9B";
@@ -53,7 +54,7 @@ function App() {
               <Route path="/retirement-funds" element={<ProtectedRoute><RetirementListedFunds /></ProtectedRoute>} />
               <Route path="/retirement-funds/:fondoName" element={<ProtectedRoute><IntegratedDashboard type={"Pension"} acquired={false} /></ProtectedRoute>} />
               <Route path="/CDTs" element={<ProtectedRoute><ListedCDs /></ProtectedRoute>} />
-              <Route path="/CDTs/:Name" element={<ProtectedRoute><IntegratedDashboard type={"CDT"} acquired={false} /></ProtectedRoute>} />
+              <Route path="/CDTs/:Name" element={<ProtectedRoute><CDTDetails /></ProtectedRoute>} />
             </Routes>
           </div>
           <Footer />

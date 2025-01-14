@@ -2,14 +2,14 @@ import skandia from '../../assets/images/skandia.png';
 import Lista from '../../components/Lista';
 
 function ListedCDs() {
-    const titulos = ['Nombre del CD', 'Duración', 'Tasa de interés', 'Pago mínimo de entrada', 'Valor del CD'];
+    const titulos = ['Nombre del CD', 'Duración', 'Tasa de interés', 'Pago mínimo de entrada', 'Valor del CD', 'Entidad financiera'];
     const datos = [
-        ['CD Término Corto', '1 año', '3.5%', '1.000.000 COP', '5 000MM COP'],
-        ['CD Término Medio', '3 años', '4.0%', '1.000.000 COP', '15 000MM COP'],
-        ['CD Término Largo', '5 años', '4.5%', '1.000.000 COP', '25 000MM COP'],
-        ['CD Tasa Variable', '3 años', '3.0% a 4.5%', '1.000.000 COP', '10 000MM COP']
+        ['CD Término Corto', '1 año', '3.5%', '1.000.000 COP', '5 000MM COP', 'Skandia'],
+        ['CD Término Medio', '3 años', '4.0%', '1.000.000 COP', '15 000MM COP', 'Skandia'],
+        ['CD Término Largo', '5 años', '4.5%', '1.000.000 COP', '25 000MM COP', 'Skandia'],
+        ['CD Tasa Variable', '3 años', '3.0% a 4.5%', '1.000.000 COP', '10 000MM COP', 'Skandia']
     ];
-    const colores = ['#0057B7', 'black', 'black', 'black', 'black'];
+    const colores = ['#0057B7', 'black', 'black', 'black', 'black', 'black'];
 
     return (
         <div className="mx-auto px-4 sm:px-6 lg:px-72 bg-white font-sans">
