@@ -9,18 +9,18 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const ChartComponent = ({ timeFrame, activeOption }) => {
-  // Datos simulados basados en timeFrame y activeOption
-  const data = [
+const ChartComponent = ({ timeFrame, chartData, activeOption }) => {
+  const defaultData = [
     { time: 'Ene', value: 1000 },
     { time: 'Feb', value: 1200 },
     { time: 'Mar', value: 800 },
-    // Agrega más puntos de datos según sea necesario
   ];
+
+  const dataToShow = chartData && chartData.length ? chartData : defaultData;
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={data}>
+      <LineChart data={dataToShow}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="time" />
         <YAxis />

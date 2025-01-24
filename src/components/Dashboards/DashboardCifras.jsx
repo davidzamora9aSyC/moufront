@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ChartComponent from './ChartComponent';
+import { useParams } from 'react-router-dom';
 
 const DashboardCifras = ({ inside, titles }) => {
   const [activeOption, setActiveOption] = useState(0);
-  const [timeFrame, setTimeFrame] = useState('Meses');
+  const [timeFrame, setTimeFrame] = useState('mes');
   const [titulos, setTitulos] = useState(titles ? titles : ["Rendimientos de portafolio en el tiempo", "Rendimientos por tipo de activo"]);
-  const timeFrameOptions = ['Años', 'Meses', 'Semanas'];
+  const timeFrameOptions = ['mes', 'año', 'todo'];
+  const { fondoName } = useParams();
+  const [chartData, setChartData] = useState([]);
+  const [distributionData, setDistributionData] = useState([]);
 
   const handleActiveOptionChange = (e) => {
     setActiveOption(e.target.selectedIndex);
@@ -20,17 +24,50 @@ const DashboardCifras = ({ inside, titles }) => {
     { label: 'Bonos' },
     { label: 'Commodities' },
   ];
+  useEffect(() => {
+    if (fondoName && timeFrame) {
+      fetch(
+        `https://mouback.endomedicos.com/fondos-skandia/rendimientos?nombre=${encodeURIComponent(
+          fondoName
+        )}&rango=${encodeURIComponent(timeFrame)}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let valorAcumulado = 1000;
+          const formattedData = data.map((item, index) => {
+            if (index === 0) {
+              return {
+                time: item.fecha,
+                value: valorAcumulado,
+              };
+            } else {
+              const rentabilidad = parseFloat(item.rendimiento);
+              valorAcumulado = valorAcumulado * (1 + rentabilidad*0.01);
+              return {
+                time: item.fecha,
+                value: valorAcumulado,
+              };
+            }
+          });
+          setChartData(formattedData);
+  
+          const distribution = [
+            { label: 'Acciones', value: Math.random() * 100 },
+            { label: 'Bonos', value: Math.random() * 100 },
+            { label: 'Commodities', value: Math.random() * 100 },
+          ];
+          setDistributionData(distribution);
+        })
+        .catch((error) => console.error('Error al cargar los datos del gráfico:', error));
+    }
+  }, [fondoName, timeFrame]);
+  
+
 
   return (
-    <div
-      className={`flex flex-col lg:flex-row divide-y lg:divide-x lg:divide-y-0 divide-black divide-dotted my-12 ${inside ? '' : 'mb-20'}`}
-    >
-      {/* Columna Izquierda */}
+    <div className={`flex flex-col lg:flex-row divide-y lg:divide-x lg:divide-y-0 divide-black divide-dotted my-12 ${inside ? '' : 'mb-20'}`}>
       <div className="w-full lg:w-1/2 py-5 flex flex-col space-y-6 px-6 lg:pr-20">
-        <h2 className="text-center text-lg font-bold mb-8">
-          {titulos[0]}
-        </h2>
-        {/* Selector de Tiempo alineado a la derecha */}
+        <h2 className="text-center text-lg font-bold mb-8">{titulos[0]}</h2>
         <div className="mb-4 flex justify-end">
           <select
             className="bg-gray-200 rounded-2xl px-4 py-2"
@@ -39,19 +76,21 @@ const DashboardCifras = ({ inside, titles }) => {
           >
             {timeFrameOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {option === 'mes'
+                  ? 'Último mes'
+                  : option === 'año'
+                    ? 'Último año'
+                    : 'Todo'}
               </option>
             ))}
           </select>
         </div>
-        {/* Gráfico */}
         <div className="w-full h-64">
-          <ChartComponent timeFrame={timeFrame} />
+          <ChartComponent timeFrame={timeFrame} chartData={chartData} />
         </div>
       </div>
-      {/* Columna Derecha */}
+
       <div className="w-full lg:w-1/2 py-5 flex flex-col space-y-6 px-6 lg:pl-20">
-        {/* Título y Selector de Tipo de Activo */}
         <div className="flex justify-between items-center w-full mb-8">
           <h2 className="text-lg font-bold">{titulos[1]}</h2>
           <div className="relative">
@@ -74,7 +113,6 @@ const DashboardCifras = ({ inside, titles }) => {
             </svg>
           </div>
         </div>
-        {/* Selector de Tiempo alineado a la derecha */}
         <div className="mb-4 flex justify-end">
           <select
             className="bg-gray-200 rounded-2xl px-4 py-2"
@@ -88,7 +126,6 @@ const DashboardCifras = ({ inside, titles }) => {
             ))}
           </select>
         </div>
-        {/* Gráfico */}
         <div className="w-full h-64">
           <ChartComponent timeFrame={timeFrame} activeOption={data[activeOption].label} />
         </div>

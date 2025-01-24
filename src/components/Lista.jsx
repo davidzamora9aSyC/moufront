@@ -50,7 +50,7 @@ const Lista = ({ titles, data, colors, hideColumnDividers, dynamicFirstColumnCol
                                                         : colors[colIndex] || 'black'
                                                 : colors[colIndex] || 'black',
                                         textAlign: colIndex === 0 ? 'left' : 'center',
-                                        cursor: colIndex === 0 ? 'pointer' : 'default', // Solo la primera columna es clickeable
+                                        cursor: colIndex === 0 ? 'pointer' : 'default', 
                                     }}
                                     onClick={colIndex === 0 ? () => handleRowClick(cellData) : undefined}
                                 >

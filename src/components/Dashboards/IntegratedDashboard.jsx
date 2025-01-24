@@ -5,17 +5,21 @@ import Selector from './Selector';
 import Dropdown from '../Dropdown';
 import DashboardMovimientos from './DashboardMovimientos';
 import DashboardCifrasRendimientos from './DashboardCifrasRendimientos';
+import { useParams } from 'react-router-dom';
+import Simulator from '../../pages/Crear/Simulator';
 
 const IntegratedDashboard = ({ inside, acquired, type }) => {
   const [selectedOption, setSelectedOption] = useState('Distribucion');
   const allOptions = ['Distribucion', 'Rendimientos', 'Movimientos', 'Valor Cuenta'];
   const options = acquired ? allOptions : allOptions.filter(option => option !== 'Movimientos');
+  const { fondoName } = useParams();
+
   let titulo;
 
   if (type === 'CDT') {
     titulo = "Nombre del CDT";
   } else if (type === 'Inversion') {
-    titulo = "Nombre de la cuenta de inversión";
+    titulo = fondoName;
   } else if (type === 'Pension') {
     titulo = "Nombre de la cuenta de pensión";
   }
@@ -54,6 +58,9 @@ const IntegratedDashboard = ({ inside, acquired, type }) => {
       {selectedOption === 'Rendimientos' && <DashboardCifrasRendimientos inside={inside} />}
       {selectedOption === 'Valor Cuenta' && <DashboardCifrasValorCuenta inside={inside} />}
       {selectedOption === 'Movimientos' && <DashboardMovimientos />}
+      {type !== 'CDT' && <Simulator rate="5%" duration="3" interestPayment="Anualmente" minAmount={1000000} />}
+
+    
     </div>
   );
 };

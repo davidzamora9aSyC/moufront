@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
-import CDTSimulator from './CDTSimulator';
+import Simulator from './Simulator';
 
 function CDTDetails() {
     const { Name } = useParams(); 
@@ -135,7 +135,7 @@ function CDTDetails() {
                 <p className="text-lg">
                     <span className="font-semibold">Riesgo estimado:</span> {cdt.risk}
                 </p>
-                <CDTSimulator rate={cdt.rate} duration={cdt.duration} interestPayment={cdt.interestPayment} minAmount={minAmount} />
+                <Simulator rate={cdt.rate} duration={cdt.duration} interestPayment={cdt.interestPayment} minAmount={minAmount} />
                 <div className="mt-8">
                     <Button
                         onClick={handleGoBack}

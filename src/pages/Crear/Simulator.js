@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../../components/Button';
 
-function CDTSimulator({ rate, duration, interestPayment, minAmount }) {
+function Simulator({ rate, duration, interestPayment, minAmount }) {
     const [amount, setAmount] = useState(minAmount);
     const [finalAmount, setFinalAmount] = useState(null);
     const [gain, setGain] = useState(null); // Nueva variable para almacenar la ganancia
@@ -71,4 +71,4 @@ function CDTSimulator({ rate, duration, interestPayment, minAmount }) {
     );
 }
 
-export default CDTSimulator;
+export default Simulator;
