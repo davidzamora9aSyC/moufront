@@ -33,22 +33,10 @@ const DashboardCifras = ({ inside, titles }) => {
       )
         .then((response) => response.json())
         .then((data) => {
-          let valorAcumulado = 1000;
-          const formattedData = data.map((item, index) => {
-            if (index === 0) {
-              return {
-                time: item.fecha,
-                value: valorAcumulado,
-              };
-            } else {
-              const rentabilidad = parseFloat(item.rendimiento);
-              valorAcumulado = valorAcumulado * (1 + rentabilidad*0.01);
-              return {
-                time: item.fecha,
-                value: valorAcumulado,
-              };
-            }
-          });
+          const formattedData = data.map((item) => ({
+            time: item.fecha,
+            value: item[`valor_acumulado_${timeFrame}`],  
+          }));
           setChartData(formattedData);
   
           const distribution = [
@@ -61,6 +49,7 @@ const DashboardCifras = ({ inside, titles }) => {
         .catch((error) => console.error('Error al cargar los datos del gráfico:', error));
     }
   }, [fondoName, timeFrame]);
+  
   
 
 
